@@ -6,12 +6,15 @@
   <style>
     body {
       background-color: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
     .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: 100vh;
 }
     .logo {
@@ -21,15 +24,21 @@
     label {
       font-size: 40px;
     }
-
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
     input[type="text"] {
-      padding: 10px;
+      padding: 15px;
       font-size: 16px;
     }
 
     button[type="submit"] {
       padding: 10px 20px;
       font-size: 18px;
+      background-color: black;
+      color:white;
     }
     
     </style>
@@ -40,10 +49,11 @@
       <img src="ryze.png" alt="Logo">
     </div>
     <form id="phoneForm">
-      <label for="phoneNumber">Phone Number:</label><br><br>
+      <label for="phoneNumber">Mobile Number</label><br><br>
       <input type="text" id="phoneNumber" name="phoneNumber" required><br><br>
       <button type="submit">Submit</button><br>
-      <label>& <br> Get Free Sample</label>
+      <label>&</label><br><br>
+      <label>Get Your Free Sample!!</label>
     </form>
   </div>
 
