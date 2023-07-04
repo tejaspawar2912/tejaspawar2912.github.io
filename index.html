@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+</head>
+<body>
+  <form id="phoneForm">
+    <label for="phoneNumber">Phone Number:</label>
+    <input type="text" id="phoneNumber" name="phoneNumber" required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    // Initialize Firebase with your project's configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyB4xb9Ne_Kekk5YLJGkre5VVl6skKM3clY",
+      authDomain: "nodemcu-ac406.firebaseapp.com",
+      databaseURL: "https://nodemcu-ac406-default-rtdb.asia-southeast1.firebasedatabase.app/",
+      projectId: "nodemcu-ac406",
+      storageBucket: "nodemcu-ac406.appspot.com",
+      messagingSenderId: "342372565671",
+      appId: "1:342372565671:web:ea39294b927b86c600d182"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    // Get a reference to the database
+    const database = firebase.database();
+
+    // Handle form submission
+    const form = document.getElementById('phoneForm');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      // Get the phone number value
+      const phoneNumberInput = document.getElementById('phoneNumber');
+      const phoneNumber = phoneNumberInput.value;
+
+      // Save the phone number to the Firebase database
+      const phoneNumberRef = database.ref('phoneNumbers/Unit1');
+      phoneNumberRef.push({
+        phoneNumber: phoneNumber
+      });
+
+      // Clear the form
+      phoneNumberInput.value = '';
+    });
+  </script>
+</body>
+</html>
