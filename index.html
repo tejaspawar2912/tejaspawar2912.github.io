@@ -3,13 +3,28 @@
 <head>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <style>
+    body {
+      background-color: red;
+    }
+    .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+    </style>
 </head>
 <body>
-  <form id="phoneForm">
-    <label for="phoneNumber">Phone Number:</label>
-    <input type="text" id="phoneNumber" name="phoneNumber" required>
-    <button type="submit">Submit</button>
-  </form>
+  <div class="container">
+    <img src="ryze.jpg" alt="Logo">
+    <form id="phoneForm">
+      <label for="phoneNumber">Phone Number:</label>
+      <input type="text" id="phoneNumber" name="phoneNumber" required>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 
   <script>
     // Initialize Firebase with your project's configuration
